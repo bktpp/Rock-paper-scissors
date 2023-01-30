@@ -4,16 +4,11 @@ const options = ["ROCK", "PAPER", "SCISSORS"];
     const choice = options[Math.floor(Math.random() * options.length)];
     return choice;
 } 
-//need pop up box asking for input
-//if user types any of options array, move on
-//if none of options array, start again
-//if good answer, transform to uppercase
-//return uppsercase answer
-
+/* This function chooses a random name from options array to use as
+the computers choice in game */
 
 
 function playRound(playerSelection, computerSelection) {
- 
     if(playerSelection == computerSelection) {
         return "Tie";
     }
@@ -21,12 +16,14 @@ function playRound(playerSelection, computerSelection) {
            (playerSelection == "ROCK" && computerSelection == "SCISSORS") ||
            (playerSelection == "PAPER" && computerSelection == "ROCK") ||
            (playerSelection == "SCISSORS" && computerSelection == "PAPER"))
- {
+   
+     {
     return `Player wins, ${playerSelection} beats ${computerSelection}`;
 } else {
     return `computer wins, ${computerSelection} beats ${playerSelection}`;
-}
+ }
 } 
+/* This function calls players and computers choice and evaluates who won that round */
 
 function getPlayerChoice() {
   let goodAnswer = false;
@@ -42,6 +39,8 @@ function getPlayerChoice() {
       return playerAnsCaps;
     }
 } }
+
+//function for getting players choice
 
 function game() {
   let playerScore = 0;
@@ -70,22 +69,6 @@ function game() {
           console.log("DRAW");
         }
       }
-  
-
-
-
+     /* function for a 5 round match and announces winner based on score at the end */
 game();
 
-
-
-/*
-function playRound(playerSelection, computerSelection) {
-  const result = checkWinner(playerSelection, computerSelection);
-  if (result == "Tie") {
-    return "it was a tie";
-  } else if(result == "Player wins") {
-    return "Player wins";
-  } else {
-    return "computer wins";
-  }
-} */
