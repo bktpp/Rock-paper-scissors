@@ -1,11 +1,11 @@
-const options = ["rock", "paper", "scissors"];
+const options = ["ROCK", "PAPER", "SCISSORS"];
  
  function getComputerChoice() {
     const choice = options[Math.floor(Math.random() * options.length)];
     return choice;
 } 
 
-function checkWinner(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
     if(playerSelection == computerSelection) {
         return "Tie";
     }
@@ -14,11 +14,14 @@ function checkWinner(playerSelection, computerSelection) {
            (playerSelection == "paper" && computerSelection == "rock") ||
            (playerSelection == "scissors" && computerSelection == "paper"))
  {
-    return "Player wins";
+    return `Player wins, ${playerSelection} beats ${computerSelection}`;
 } else {
-    return "computer wins";
+    return `computer wins, ${computerSelection} beats ${playerSelection}`;
 }
-}
+} 
+
+
+/*
 function playRound(playerSelection, computerSelection) {
   const result = checkWinner(playerSelection, computerSelection);
   if (result == "Tie") {
@@ -28,9 +31,10 @@ function playRound(playerSelection, computerSelection) {
   } else {
     return "computer wins";
   }
-}
+} */
 
-const playerSelection = "rock";
+const askPlayer = prompt("Rock, paper or scissors?");
+const playerSelection = askPlayer.trim().toUpperCase();
 const computerSelection = getComputerChoice();
 
-console.log(checkWinner(playerSelection, computerSelection));
+console.log(playRound(playerSelection, computerSelection));
