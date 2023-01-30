@@ -7,8 +7,8 @@ const options = ["ROCK", "PAPER", "SCISSORS"];
 //need pop up box asking for input
 //if user types any of options array, move on
 //if none of options array, start again
-//if good answer, transform to lowercase
-//return lowercase answer
+//if good answer, transform to uppercase
+//return uppsercase answer
 
 
 
@@ -46,6 +46,7 @@ function getPlayerChoice() {
 function game() {
   let playerScore = 0;
   let computerScore = 0;
+
   for (let i = 0; i < 5; i++) {
     const playerSelection = getPlayerChoice();
     const computerSelection = getComputerChoice();
