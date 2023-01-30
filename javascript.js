@@ -1,39 +1,33 @@
-function getComputerChoice(computerAnswer) {
-    return computerAnswer[Math.floor(Math.random() * computerAnswer.length)];
-}
-           
-const computerAnswer = ["Rock", "Paper", "Scissors"];
+const options = ["Rock", "Paper", "Scissors"];
+ 
+ function getComputerChoice() {
+    const choice = options[Math.floor(Math.random() * options.length)];
+    return choice;
+} 
 
-let playerSelection = prompt("play"); 
-if (playerSelection) {
-    let playerAnswer = playerSelection.trim().toLocaleLowerCase();
-    if (playerAnswer === "rock"  || playerAnswer === "paper"  || playerAnswer === "scissors") {
-     let computerSelection = getComputerChoice(computerAnswer);
-        console.log(computerSelection);
+function checkWinner(playerSelection, computerSelection) {
+    if(playerSelection == computerSelection) {
+        return "Tie";
     }
+    else if(
+           (playerSelection == "rock" && computerSelection == "scissors") ||
+           (playerSelection == "paper" && computerSelection == "rock") ||
+           (playerSelection == "scissors" && computerSelection == "paper"))
+ {
+    return "Player wins";
+} else {
+    return "computer wins";
 }
-/*
-
+}
 function playRound(playerSelection, computerSelection) {
-    if (playerSelection == "rock" && computerSelection == "paper") {
-       return "you lose";
-    } else if (playerSelection == "rock" && computerSelection == "scissors") {
-        return "you win";
-    } else if (playerSelection == "rock" && computerSelection == "rock") {
-        return "tie";
-    } else if (playerSelection == "paper" && computerSelection == "rock") {
-        return "you lose";
-     } else if (playerSelection == "paper" && computerSelection == "scissors") {
-         return "you win";
-     } else if (playerSelection == "paper" && computerSelection == "paper") {
-         return "tie";
-    
-} else if (playerSelection == "scissors" && computerSelection == "rock") {
-    return "you lose";
- } else if (playerSelection == "scissors" && computerSelection == "paper") {
-     return "you win";
- } else if (playerSelection == "scissors" && computerSelection == "scissors") {
-     return "tie"; 
-    } }
-    let computerSelection = getComputerChoice(computerAnswer); */
-    
+  const result = checkWinner(playerSelection, computerSelection);
+  if (result == "Tie") {
+    return "it was a tie";
+  } else if(result == "Player wins") {
+    return "Player wins";
+  } else {
+    return "computer wins";
+  }
+}
+
+playerSelection = prompt("rock paper scissors");
