@@ -94,7 +94,7 @@ function scoreBoard() {
       document.body.appendChild(playAgain);
       playAgain.textContent = "Play again?"
       playAgain.style.opacity = "100";
-      document.getElementById()
+      makeBtnsUnclickable();
     } else {
       gameResult.textContent = "";
       gameResult.textContent = `computer won!, ${computerScore} to ${playerScore}`;
@@ -103,7 +103,14 @@ function scoreBoard() {
       document.body.appendChild(playAgain);
       playAgain.textContent = "Play again?"
       playAgain.style.opacity = "100";
+      makeBtnsUnclickable();
     }
+  }
+}
+
+function makeBtnsUnclickable() {
+  for (let i = 0; i < btn.length; i++) {
+    btn[i].disabled = true;
   }
 }
 
@@ -117,6 +124,13 @@ function resetGame() {
   computerScore = 0;
   playAgain.style.opacity = "0";
   gameResult.style.fontSize = '16px';
+  makeBtnsClickable();
+}
+
+function makeBtnsClickable() {
+  for (let i = 0; i < btn.length; i++) {
+    btn[i].disabled = false;
+  }
 }
 
 
