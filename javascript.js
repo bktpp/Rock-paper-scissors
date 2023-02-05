@@ -71,12 +71,12 @@ function playerChoseScissors() {
       rounds++;
       computerScore++;
       gameResult.textContent = "";
-      gameResult.textContent = `computer won, ${computerPick} beats ${playerPick}`;
+      gameResult.textContent = `computer +1, ${computerPick} beats ${playerPick}`;
     } else {
       rounds++;
       playerScore++;
       gameResult.textContent = "";
-      gameResult.textContent = `player won, ${playerPick} beats ${computerPick}`;
+      gameResult.textContent = `player +1, ${playerPick} beats ${computerPick}`;
     } 
     scoreBoard();
 }
@@ -89,7 +89,7 @@ function scoreBoard() {
     if (playerScore > computerScore) {
       endGame.style.opacity = "0";
       gameResult.textContent = "";
-      gameResult.textContent = `Player won!, ${playerScore} to ${computerScore}`;
+      gameResult.textContent = "Easy dub. You won";
       gameResult.style.fontSize = '50px';
       document.body.appendChild(playAgain);
       playAgain.textContent = "Play again?"
@@ -97,7 +97,7 @@ function scoreBoard() {
       makeBtnsUnclickable();
     } else {
       gameResult.textContent = "";
-      gameResult.textContent = `computer won!, ${computerScore} to ${playerScore}`;
+      gameResult.textContent = "YOU TRASH. HOLD THIS L CUH";
       gameResult.style.fontSize = '50px'
       endGame.style.opacity = "0";
       document.body.appendChild(playAgain);
