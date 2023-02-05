@@ -14,6 +14,11 @@ body {
     padding: 20px;
 }
 
+.btn:active {
+    background-color: rgb(79, 76, 76);
+    color: pink;
+}
+
 .description {
     font-size: 25px;
 }
