@@ -25,12 +25,12 @@ function playerChoseRock() {
     rounds++;
     computerScore++;
     gameResult.textContent = "";
-    gameResult.textContent = `Computer won! ${computerPick} beats ${playerPick}`;
+    gameResult.textContent = `Computer +1, ${computerPick} beats ${playerPick}`;
   } else {
     rounds++;
     playerScore++;
     gameResult.textContent = "";
-    gameResult.textContent = `player won, ${playerPick} beats ${computerPick}`;
+    gameResult.textContent = `player +1, ${playerPick} beats ${computerPick}`;
   }
   scoreBoard();
 }
@@ -48,12 +48,12 @@ function playerChosePaper() {
       rounds++;
       computerScore++;
       gameResult.textContent = "";
-      gameResult.textContent = `computer won, ${computerPick} beats ${playerPick}`;
+      gameResult.textContent = `computer +1, ${computerPick} beats ${playerPick}`;
     } else {
       rounds++;
       playerScore++;
       gameResult.textContent = "";
-      gameResult.textContent = `player won, ${playerPick} beats ${computerPick}`;
+      gameResult.textContent = `player +1, ${playerPick} beats ${computerPick}`;
     }
     scoreBoard();
 }
