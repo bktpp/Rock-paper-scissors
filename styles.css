@@ -8,6 +8,16 @@ body {
     background-color: pink;
 }
 
+.btn {
+    border-radius: 25px;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.description {
+    font-size: 25px;
+}
+
 .game {
     text-align: center;
     
