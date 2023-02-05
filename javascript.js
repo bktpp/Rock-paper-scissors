@@ -98,7 +98,7 @@ function scoreBoard() {
     } else {
       gameResult.textContent = "";
       gameResult.textContent = "YOU TRASH. HOLD THIS L CUH";
-      gameResult.style.fontSize = '50px'
+      gameResult.style.fontSize = '35px'
       endGame.style.opacity = "0";
       document.body.appendChild(playAgain);
       playAgain.textContent = "Play again?"
