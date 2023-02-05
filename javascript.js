@@ -6,6 +6,9 @@ const options = ["ROCK", "PAPER", "SCISSORS"];
 } 
 
 const gameResult = document.querySelector('.result');
+const endGame = document.querySelector('.options');
+const playAgain = document.createElement("button");
+const btn = document.getElementsByClassName("btn");
 
 let playerPick = '';
 let computerPick = getComputerChoice();
@@ -84,14 +87,36 @@ let computerScore = 0;
 function scoreBoard() {
   if (rounds == 5) {
     if (playerScore > computerScore) {
+      endGame.style.opacity = "0";
       gameResult.textContent = "";
       gameResult.textContent = `Player won!, ${playerScore} to ${computerScore}`;
-      gameResult.style.fontSize = '50px'
+      gameResult.style.fontSize = '50px';
+      document.body.appendChild(playAgain);
+      playAgain.textContent = "Play again?"
+      playAgain.style.opacity = "100";
+      document.getElementById()
     } else {
       gameResult.textContent = "";
       gameResult.textContent = `computer won!, ${computerScore} to ${playerScore}`;
       gameResult.style.fontSize = '50px'
+      endGame.style.opacity = "0";
+      document.body.appendChild(playAgain);
+      playAgain.textContent = "Play again?"
+      playAgain.style.opacity = "100";
     }
   }
 }
+
+playAgain.addEventListener('click', resetGame);
+
+function resetGame() {
+  gameResult.textContent = "";
+  endGame.style.opacity = "100";
+  rounds = 0;
+  playerScore = 0;
+  computerScore = 0;
+  playAgain.style.opacity = "0";
+  gameResult.style.fontSize = '16px';
+}
+
 
